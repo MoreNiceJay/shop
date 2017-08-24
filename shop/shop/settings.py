@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.eggs.Loader',
+)
 from oscar.defaults import *
 import os
 
@@ -26,9 +31,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lo$i&wreyh8*=(@l@g-68vmdjjqieckox+!x5**9alpl7&7axj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['52.35.3.117','ec2-52-35-3-117.us-west-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['34.210.212.95','ec2-34-210-212-95.us-west-2.compute.amazonaws.com',]
 
 
 # Application definition
@@ -71,8 +76,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            OSCAR_MAIN_TEMPLATE_DIR
+	   location('templates'),
+            #os.path.join(BASE_DIR, 'templates'),
+            OSCAR_MAIN_TEMPLATE_DIR,
+	    #location('templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -149,6 +156,8 @@ STATIC_URL = '/static/'
 #STATIC_URL = os.path.join(BASE_DIR, 'static/')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #STATIC_ROOT = location('/home/ubuntu/django/shop/static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = location('media')
 
 
 
