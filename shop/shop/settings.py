@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     
     'compressor',
     'widget_tweaks',
-] + get_core_apps()
+] + get_core_apps(['checkout'],)
 
 SITE_ID = 1
 MIDDLEWARE = [
