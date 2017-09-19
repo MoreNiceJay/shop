@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     
     'compressor',
     'widget_tweaks',
-] + get_core_apps(['checkout'],)
+] + get_core_apps(['checkout','promotions'],)
 
 SITE_ID = 1
 MIDDLEWARE = [
@@ -154,8 +154,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATIC_URL = os.path.join(BASE_DIR, 'static/')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #STATIC_ROOT = location('/home/ubuntu/django/shop/static')
+STATIC_ROOT = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = location('media')
 
