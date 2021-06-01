@@ -66,7 +66,7 @@ sqlparse==0.2.3
 traitlets==4.3.2
 transifex-client==0.12.4
 Unidecode==0.4.21
-urllib3==1.21.1
+urllib3==1.26.5
 uWSGI==2.0.15
 wcwidth==0.1.7
 Werkzeug==0.12.2
